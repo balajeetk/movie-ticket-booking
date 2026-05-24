@@ -4,7 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "set-env": "node scripts/generate-env.js",
+    "prebuild": "npm run set-env",
+    "prebuild:prod": "npm run set-env",
+    "prewatch": "npm run set-env",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:dev": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -28,6 +34,7 @@
     "@angular/cli": "^17.2.3",
     "@angular/compiler-cli": "^17.2.0",
     "@types/jasmine": "~5.1.0",
+    "deploy-ssh": "^1.0.5",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
