@@ -1,0 +1,46 @@
+<div class="page-shell">
+  <div class="page-header">
+    <div>
+      <h2>Browse movies</h2>
+      <p>Choose a film, then reserve seats for the next available show.</p>
+    </div>
+    <div class="search-bar">
+      <input
+        type="search"
+        class="form-control"
+        placeholder="Search title, genre, or description"
+        [(ngModel)]="search"
+        aria-label="Search movies"
+      />
+    </div>
+  </div>
+
+  <div *ngIf="filteredMovies.length; else emptyState" class="movie-grid">
+    <article *ngFor="let movie of filteredMovies" class="movie-card">
+      <img [src]="movie.poster" [alt]="movie.title" />
+      <div class="movie-body">
+        <h3>{{ movie.title }}</h3>
+        <div class="movie-meta">
+          <span class="badge bg-secondary">{{ movie.genre }}</span>
+          <span>{{ movie.duration }}</span>
+          <span>{{ movie.rating }}/10</span>
+        </div>
+        <p>{{ movie.description }}</p>
+      </div>
+      <div class="movie-footer">
+        <div>
+          <strong>{{ movie.showtime }}</strong>
+          <span class="text-muted">• ${{ movie.price }} / seat</span>
+        </div>
+        <a class="btn btn-primary" [routerLink]="['/booking', movie.id]">Book now</a>
+      </div>
+    </article>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <h3>No movies found</h3>
+      <p>Try a different search term or clear the search field.</p>
+    </div>
+  </ng-template>
+</div>

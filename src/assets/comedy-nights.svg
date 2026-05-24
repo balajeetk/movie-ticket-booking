@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="300" viewBox="0 0 580 300">
+  <rect width="580" height="300" fill="#4a8f2c" />
+  <path d="M0 220 Q145 90 290 220 T580 220" fill="rgba(255,255,255,0.12)" />
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="38">Comedy Nights</text>
+</svg>

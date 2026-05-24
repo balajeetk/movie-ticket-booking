@@ -1,0 +1,71 @@
+<div class="booking-shell" *ngIf="movie; else loadingState">
+  <div class="booking-header">
+    <div>
+      <span class="tag">Now showing</span>
+      <h2>{{ movie.title }}</h2>
+      <p>{{ movie.genre }} · {{ movie.duration }} · Rating {{ movie.rating }}/10</p>
+      <p class="showtime">Showtime: <strong>{{ movie.showtime }}</strong></p>
+    </div>
+    <div class="summary-card">
+      <div>
+        <span>Selected seats</span>
+        <strong>{{ selectedSeats.size }}</strong>
+      </div>
+      <div>
+        <span>Price per seat</span>
+        <strong>${{ movie.price }}</strong>
+      </div>
+      <div>
+        <span>Total</span>
+        <strong>${{ totalPrice }}</strong>
+      </div>
+      <button
+        class="btn btn-success w-100"
+        (click)="confirmBooking()"
+        [disabled]="!selectedSeats.size"
+      >
+        Confirm booking
+      </button>
+      <a class="btn btn-outline-secondary w-100 mt-2" [routerLink]="['/movies']">Back to movies</a>
+    </div>
+  </div>
+
+  <section class="booking-content">
+    <div class="poster-panel">
+      <img [src]="movie.poster" [alt]="movie.title" />
+      <p>{{ movie.description }}</p>
+    </div>
+
+    <div class="seat-selector">
+      <h3>Select seats</h3>
+      <div class="legend">
+        <span><span class="legend-dot available"></span> Available</span>
+        <span><span class="legend-dot selected"></span> Selected</span>
+        <span><span class="legend-dot booked"></span> Booked</span>
+      </div>
+      <div class="seat-grid">
+        <div class="seat-row" *ngFor="let row of seatRows">
+          <button
+            class="seat"
+            [class.booked]="seat.booked"
+            [class.selected]="selectedSeats.has(seat.id)"
+            [disabled]="seat.booked"
+            (click)="toggleSeat(seat)"
+            *ngFor="let seat of row"
+            type="button"
+          >
+            {{ seat.label }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #loadingState>
+  <div class="empty-state">
+    <h3>Movie not found</h3>
+    <p>Please choose a valid show from the movie list.</p>
+    <a class="btn btn-primary" [routerLink]="['/movies']">Browse movies</a>
+  </div>
+</ng-template>

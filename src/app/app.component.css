@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f5f8fb;
+  color: #323238;
+}
+
+.app-shell {
+  min-height: calc(100vh - 72px);
+  padding: 1rem 0 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.15rem;
+}

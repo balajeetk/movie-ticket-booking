@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="300" viewBox="0 0 580 300">
+  <rect width="580" height="300" fill="#0d1b2a" />
+  <circle cx="460" cy="80" r="40" fill="#a1c9f1" opacity="0.8" />
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="38">Galactic Drift</text>
+</svg>

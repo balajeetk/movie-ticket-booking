@@ -1,0 +1,27 @@
+<div class="summary-shell" *ngIf="booking">
+  <div class="summary-card">
+    <h2>Booking confirmed</h2>
+    <p class="subtitle">Your tickets are ready. Enjoy the show!</p>
+    <div class="summary-group">
+      <span>Movie</span>
+      <strong>{{ booking.movie.title }}</strong>
+    </div>
+    <div class="summary-group">
+      <span>Showtime</span>
+      <strong>{{ booking.movie.showtime }}</strong>
+    </div>
+    <div class="summary-group">
+      <span>Seats</span>
+      <strong>{{ booking.seats.join(', ') }}</strong>
+    </div>
+    <div class="summary-group">
+      <span>Total paid</span>
+      <strong>${{ booking.total }}</strong>
+    </div>
+    <div class="summary-group">
+      <span>Confirmed</span>
+      <strong>{{ booking.confirmedAt }}</strong>
+    </div>
+    <button class="btn btn-primary mt-3" (click)="startNewBooking()">Book another movie</button>
+  </div>
+</div>

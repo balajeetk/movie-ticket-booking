@@ -1,0 +1,11 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-semibold" routerLink="/movies">Movie Ticket Booking</a>
+    <div *ngIf="auth.isAuthenticated">
+      <button class="btn btn-outline-secondary btn-sm" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<main class="app-shell">
+  <router-outlet></router-outlet>
+</main>

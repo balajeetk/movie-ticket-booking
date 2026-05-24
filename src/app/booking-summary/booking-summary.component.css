@@ -1,0 +1,38 @@
+.summary-shell {
+  margin: 2rem auto;
+  max-width: 780px;
+  padding: 0 1rem;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #e6e8eb;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  margin-bottom: 1.5rem;
+  color: #6b7280;
+}
+
+.summary-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.summary-group:last-child {
+  border-bottom: none;
+}
+
+.summary-card button {
+  width: 100%;
+}

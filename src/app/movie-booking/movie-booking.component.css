@@ -1,0 +1,144 @@
+.booking-shell {
+  max-width: 1060px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.booking-header {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.booking-header .tag {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e6e8eb;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.summary-card div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking-content {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1.5rem;
+}
+
+.poster-panel {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e6e8eb;
+  padding: 1.25rem;
+}
+
+.poster-panel img {
+  width: 100%;
+  border-radius: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.seat-selector {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e6e8eb;
+  padding: 1.25rem;
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.legend-dot.available {
+  background: #d1e7dd;
+}
+
+.legend-dot.selected {
+  background: #0d6efd;
+}
+
+.legend-dot.booked {
+  background: #adb5bd;
+}
+
+.seat-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.seat-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.seat {
+  min-width: 54px;
+  min-height: 54px;
+  border-radius: 0.95rem;
+  border: 1px solid #d0d5dd;
+  background: #f8fafc;
+  font-weight: 600;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.seat:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #0d6efd;
+}
+
+.seat.selected {
+  background: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+.seat.booked {
+  background: #f1f3f5;
+  color: #6c757d;
+  border-color: #ced4da;
+}
+
+.empty-state {
+  max-width: 620px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .booking-header,
+  .booking-content {
+    grid-template-columns: 1fr;
+  }
+}
