@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://prod.example.com/api'
+  apiUrl: 'http://balajeetk-001-site1.ktempurl.com/'
 };
